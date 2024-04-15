@@ -1,0 +1,9 @@
+  <h1>Tasks</h1>
+  <div *ngFor="let task of tasks">
+    <div>
+      {{ task.name }} - {{ task.description }} - {{ task.dueDate | date }} - Completed: <input type="checkbox" [checked]="task.completed" (change)="markComplete(task.id)">
+      <button (click)="editTask(task.id)">Edit</button> <button (click)="deleteTask(task.id)">Delete</button>
+    </div>
+  </div>
+  <app-task-form [editingTask]="editingTask" (taskSubmit)="onTaskSubmit($event)" (updateTask)="onUpdateTask($event)"></app-task-form>
+  
