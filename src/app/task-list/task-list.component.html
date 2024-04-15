@@ -1,4 +1,4 @@
-  <h1>Tasks</h1>
+  <h1 style="text-align: center;">Tasks</h1>
   <div *ngFor="let task of tasks">
     <div>
       {{ task.name }} - {{ task.description }} - {{ task.dueDate | date }} - Completed: <input type="checkbox" [checked]="task.completed" (change)="markComplete(task.id)">
